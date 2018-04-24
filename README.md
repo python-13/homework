@@ -10,17 +10,7 @@
             zuoye.py 作业的代码文件
         xiaozhi的目录
             zuoye.py 作业代码文件
-            
-   02：第二次作业提交的目录
-        mage 用自己的名字新建文件间
-            zuoye.py 作业的代码文件
-        xiaozhi的目录
-            zuoye.py 作业代码文件
-   03：第三次作业提交的目录
-        mage 用自己的名字新建文件间
-            zuoye.py 作业的代码文件
-        xiaozhi的目录
-            zuoye.py 作业代码文件
+           
      以此类推
 
 1.命令行添加代码
