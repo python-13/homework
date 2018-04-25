@@ -25,8 +25,11 @@ info_update = """
 请按 用户名:年龄:QQ号码 格式输入信息 如:
      朱启拂:22:895653425
 """
+
+
 def user_no_found(user_name):
     print("{0} 用户信息不存在!".format(user_name))
+
 
 def f_check(user_name):
     if user_name in data.keys():
@@ -34,13 +37,16 @@ def f_check(user_name):
     else:
         return False
 
+
 def f_delete(user_name):
     data.pop(user_name)
     print("{0} 用户信息删除成功!".format(user_name))
 
+
 def f_update(user_name, age, qq):
     data.update({user_name: {'age': age, 'qq': qq}})
     print("{0} 用户信息更新成功!".format(user_name))
+
 
 def main():
     while True:
@@ -75,6 +81,7 @@ def main():
         elif select == '5':
             print('退出程序!')
             break
-    
+
+
 if __name__ == '__main__':
     main()
