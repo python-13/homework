@@ -18,17 +18,18 @@ menu = '''
 def main():
     """docstring"""
     count = 3
-    while count >= 1:
+    while 1:
         useranme = input('Enter user name: ').strip()
-        passwd = getpass.getpass('Enter user password: ').strip()
-        if useranme in user_data and passwd == str(user_data[useranme][2]):
+        passwd = input('Enter user password: ').strip()
+        if count <= 1:
+            print('Retry username or password more than three times ')
+            break
+        elif useranme in user_data and passwd == str(user_data[useranme][2]):
             print('\33[31mWelcome login\33[0m')
             dataOPerator()
         else:
             print('username or password is incorrect')
             count -= 1
-    else:
-        print('Retry username or password more than three times ')
 
 def dataOPerator():
     """docstring"""
@@ -71,4 +72,3 @@ def dataOPerator():
 
 if __name__ == '__main__':
     main()
-# 代码写的很好,有些地方稍微改下，代码的质量会更好
