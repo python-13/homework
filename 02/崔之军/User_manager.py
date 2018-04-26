@@ -63,3 +63,4 @@ def dataOPerator():
 
 if __name__ == '__main__':
     main()
+# 代码写的很好,有些地方稍微改下，代码的质量会更好
