@@ -63,3 +63,4 @@ def dataOPerator():
 
 if __name__ == '__main__':
     main()
+   # 代码写的很棒，尤其是颜色显示这块。超过限制次数后，最好break一下，排序除了lambda，还有别的方式，可以尝试。
