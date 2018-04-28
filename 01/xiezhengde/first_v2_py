@@ -11,6 +11,7 @@
 如果用户输入 list， 则打印所有用户信息;
 打印用户第一个行数据为用户信息描述， 从第二行开始为用户数据;
 如果用户输入 exit， 则打印退出程序， 并退出 ;
+
 '''
 data = {"zhangsan":{"age":15,"tel":134},
         "lisi":{"age":16,"tel":155},
@@ -18,29 +19,30 @@ data = {"zhangsan":{"age":15,"tel":134},
 }
 
 while True:
-    operating = str(input('请输入你要的操作')).strip()
+    print("Enter 'delete','update','find','list','exit'!")
+    operating = str(input('>>>')).strip()
     if operating == "delete":
-        name = str(input('要删除的用户名'))
+        name = str(input('Enter delete user name:'))
         if name in data:
             data.pop(name)
-            print("删除成功")
+            print("Delete Done")
         else:
-            print('用户不存在')
+            print('User Not Exist!')
 
     elif operating == "update":
-        updata = str(input(" 用户名:年龄:联系方式")).split(":")
+        updata = str(input('Enter "name:age:tel"')).split(":")
         if updata[0] in data:
             data.update({updata[0]:{"age":updata[1],"tel":updata[2]}})
-            print("更新成功!")
+            print("Update Done!")
         else:
-            print("用户不存在")
+            print("User not exist!")
 
     elif operating == "find":
-        username = str(input("请输入要查找的用户名:")).strip()
+        username = str(input('Enter User name:')).strip()
         if username in data:
             print(data[username])
         else:
-            print("你要查的用户不存在")
+            print("User not exist!")
 
     elif operating == "list":
         print(data)
@@ -49,6 +51,5 @@ while True:
         exit()
 
     else:
-        print("请输入'delete','update','find','list','exit'!")
+        continue
         
-# 逻辑工程上没有太大问题,就是在刚运行的时候，没有提示对应的帮助信息，首次用户不知道如何使用，在修改一下哈，建议除了注释之外，别的地方尽量不建议使用中文。
