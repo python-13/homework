@@ -1,0 +1,111 @@
+# coding="utf-8"
+import copy
+"""
+这个只能算是完成作业内容,不考虑代效率,视频只看完字符窜,后面还很多没学,之后再改进了
+"""
+'''
+第二次作业：
+在用户管理功能中添加密码信息:
+增、 改添加用户密码输入
+显示时将用户密码显示为 N(密码长度)个*
+用户验证修改为用户名和密码
+输入 list 后提示用户排序字段（name, age, tel） ， 根据用户输入字段进行排序（升序）
+后将结果输入
+备注：请于4月28日前提交到自己的git上
+'''
+
+data = {"zhangsan": [15,134,"1234a"],
+        "lisi": [16,155,"11a"],
+        "wangwu": [11,167,"222222a"],
+        "admin": [22,3333,"8a"]
+}
+flag = True
+while flag: #用户登录部分
+    print("Welcome to user management system\nEnter user name and passwd:")
+    user = str(input("User name:")).strip()
+    print(user)
+    pwd = str(input("password:")).strip()
+    print(pwd)
+    if user in data and pwd == data[user][2]:
+        print("Login successful!")
+        flag = False #控制用户登录循环标签.
+    else:
+        print("User or passwd error.\n")
+        continue
+
+    while True:#操作部分
+        print("Enter'adduser','delete','update','find','list','exit'!")
+        operating = str(input('>>>')).strip()
+        if operating == "delete":#删除用户
+            name = str(input('Delete user name'))
+            if name in data:
+                data.pop(name)
+                print("Delelte Done!")
+            else:
+                print('User name not exist')
+
+        elif operating == "update": #用户信息更新
+            flag3 = False
+            if user != "admin":
+                print("Enter admins name and passwd:")
+                user1 = str(input("Admins name:")).strip()
+                pwd1 = str(input("password:")).strip()
+                if user1 == "admin" and pwd1 == data["admin"][2]:
+                    flag2 = True
+                else:
+                    print("User name or password error")
+            if user == "admin":
+                flag2 = True
+            if flag2:
+                updata = str(input(" usernmae:age:tel:passwd")).split(":")
+                if updata[0] in data:
+                    data.update({updata[0]: [updata[1], updata[2], updata[3]]})
+                    print("Update Done!")
+                else:
+                    print("'User name not exist")
+            else:
+                print("admin User or passwd error.\n")
+                continue
+
+        elif operating == "find": #查询用户信息
+            username = str(input("Enter uesr name:")).strip()
+            if username in data:
+                print("age:%s,tel:%s,passwd:%s"%(data[username][0],data[username][1],"*"*len(data[username][2])))
+            else:
+                print("User name not exist")
+
+        elif operating == "list": #列出用户信息
+            data1 = copy.deepcopy(data)
+            for i in data1:
+                data1[i][2] = "*" * (len(data1["zhangsan"][2]))
+            print(data1)
+
+        elif operating == "adduser":#添加用户
+            flag2=False
+            if user != "admin":
+                print("Enter admins name and passwd:")
+                user1 = str(input("Admins name:")).strip()
+                pwd1 = str(input("password:")).strip()
+                if user1 == "admin" and pwd1 == data["admin"][2]:
+                    flag2 = True
+                else:
+                    print("User name or password error")
+            if user == "admin":
+                flag2 = True
+            if flag2:
+                adduse = str(input("username:")).strip()
+                addpwd = str(input("passwd:")).strip()
+                addage = int(input("age:"))
+                addtel = int(input("tel:"))
+                if adduse in data:
+                    print("User name exist")
+                else:
+                    data.update({adduse: [addage, addtel, addpwd]})
+                    print("User add done")
+            else:
+                 print("admin User or passwd error.\n")
+                 continue
+        elif operating == "exit":
+             exit()
+        else:
+            print("Enter'adduser','delete','update','find','list','exit'!")
