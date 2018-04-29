@@ -111,9 +111,9 @@ while flag: #用户登录部分
                     data.update({adduse: [addage, addtel, addpwd]})
                     print("User add done")
             else:
-                 print("admin User or passwd error.\n")
-                 continue
+                print("admin User or passwd error.\n")
+                continue
         elif operating == "exit":
-             exit()
+            break
         else:
            continue
