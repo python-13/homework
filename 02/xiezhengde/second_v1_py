@@ -15,7 +15,7 @@ import copy
 '''
 
 data = {"zhangsan": [15,134,"1234a"],
-        "lisi": [16,155,"11a"],
+        "blisi": [16,155,"11a"],
         "wangwu": [11,167,"222222a"],
         "admin": [22,3333,"8a"]
 }
@@ -78,7 +78,15 @@ while flag: #用户登录部分
             data1 = copy.deepcopy(data)
             for i in data1:
                 data1[i][2] = "*" * (len(data1["zhangsan"][2]))
-            print(data1)
+            print ("Enter sort key 'name','age','tel'")
+            sorting = str(input('>>>')).strip()
+            if sorting == 'age':
+                s = sorted(data1.items(),key=lambda x:x[1][0],reverse=True)
+            elif sorting == 'tel':
+                s = sorted(data.items(), key=lambda x: x[1][1], reverse=True)
+            else:
+                s = sorted(data1.items(),key = lambda x:x[0],reverse=True)
+            print(s)
 
         elif operating == "adduser":#添加用户
             flag2=False
@@ -108,4 +116,5 @@ while flag: #用户登录部分
         elif operating == "exit":
              exit()
         else:
-            print("Enter'adduser','delete','update','find','list','exit'!")
+            continue
+
