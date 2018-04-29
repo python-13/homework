@@ -51,12 +51,12 @@ while flag: #用户登录部分
                 user1 = str(input("Admins name:")).strip()
                 pwd1 = str(input("password:")).strip()
                 if user1 == "admin" and pwd1 == data["admin"][2]:
-                    flag2 = True
+                    flag3 = True
                 else:
                     print("User name or password error")
             if user == "admin":
-                flag2 = True
-            if flag2:
+                flag3 = True
+            if flag3:
                 updata = str(input(" usernmae:age:tel:passwd")).split(":")
                 if updata[0] in data:
                     data.update({updata[0]: [updata[1], updata[2], updata[3]]})
@@ -77,7 +77,7 @@ while flag: #用户登录部分
         elif operating == "list": #列出用户信息
             data1 = copy.deepcopy(data)
             for i in data1:
-                data1[i][2] = "*" * (len(data1["zhangsan"][2]))
+                data1[i][2] = "*" * (len(data1[i][2]))
             print ("Enter sort key 'name','age','tel'")
             sorting = str(input('>>>')).strip()
             if sorting == 'age':
@@ -116,5 +116,4 @@ while flag: #用户登录部分
         elif operating == "exit":
              exit()
         else:
-            continue
-
+           continue
