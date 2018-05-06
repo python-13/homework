@@ -25,8 +25,6 @@ def NumTrans(UserInput):
     Transform = re.sub('零元', '', Transform)
     print(Transform)
 
-
-
 def main():
     """docstring"""
     while 1:
@@ -38,4 +36,6 @@ def main():
             else:
                 print('输入的数字赶出范围')
                 break
-main()
+
+if __name__ == '__main__':
+    main()
