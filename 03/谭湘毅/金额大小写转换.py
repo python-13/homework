@@ -29,8 +29,8 @@ while True:
 		break
 	else:
 		for item in listnum:
-			print(dic_mony[item])
-			print(dic_unit[lennum])
+			# print(dic_mony[item])
+			# print(dic_unit[lennum])
 			mid.append(dic_mony[item])
 			mid.append(dic_unit[lennum])
 			lennum = lennum - 1 #继续递减
