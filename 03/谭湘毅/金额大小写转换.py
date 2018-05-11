@@ -23,7 +23,7 @@ dic_unit = {0: "", 1: "拾", 2: "佰", 3: "仟", 4: "万",
 while True:
 	num = input('请输入整数数字 Q 退出 ： ')
 	listnum = list(num)
-	lennum = len(listnum) - 1  # 反过来 千 百 十
+	lennum = len(listnum) - 1  # 金额长度-1为单位 千 百 十
 	mid = []
 	if num == 'q' or num == 'Q':
 		break
@@ -33,6 +33,6 @@ while True:
 			# print(dic_unit[lennum])
 			mid.append(dic_mony[item])
 			mid.append(dic_unit[lennum])
-			lennum = lennum - 1 #继续递减
+			lennum = lennum - 1 #列表拼接完成后 继续递减单位
 		print(mid)
 		print('{}元'.format(''.join(mid)))
