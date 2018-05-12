@@ -3,6 +3,7 @@
 #
 # Description: learn dict in python how to use
 # Author: whang
+# QQ: 934946166
 # ChangDate: 2018-05-12
 # Only use python3
 user_info = {
