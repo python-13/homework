@@ -6,8 +6,8 @@
 # ChangDate: 2018-05-12
 # Only use python3
 user_info = {
-    "Jerry": "Age: 20, Contact Phone: 137xxxx1234",
-    "Tom": "Age: 30, Contact Phone: 137xxxx2345",
+    "Jerry": "20, 137xxxx1234",
+    "Tom": "30, 137xxxx2345",
 }
 operate_list = ["list", "find", "update", "del", "exit"]
 
@@ -21,12 +21,14 @@ def input_not_none(content):
 
 def list_operate():
     for name, infor in user_info.items():
-        print("Name: %s\nInformation: %s\n" % (name, infor))
+        information = infor.split(",")
+        print("Name: %s\nInformation: Age: %s, ContactPhone:%s\n" % (name, information[0], information[1]))
 
 
 def find_operate(find_name):
     if find_name in user_info:
-        print("Name: ", find_name, "\nInformation:", user_info[find_name], "\n")
+        find_cut = user_info[find_name].split(",")
+        print("Name: %s \nInformation: Age: %s, ContactPhone: %s\n" % (find_name, find_cut[0], find_cut[1]))
     else:
         print("Not found\n")
 
@@ -35,8 +37,8 @@ def update_operate(update_name):
     cut_info = update_name.split(':')
     if len(cut_info) == 3:
         if cut_info[0] in user_info:
-            user_info[cut_info[0]] = "Age: " + cut_info[1] + " Contact Phone: " + cut_info[2]
-            print("Update succeed.\nNew information:\n Name: %s\n %s\n" % (cut_info[0], user_info[cut_info[0]]))
+            user_info[cut_info[0]] = cut_info[1] + ", " + cut_info[2]
+            print("Update succeed.\nNew information:\n Name: %s\n Infora: Age: %s, ContactPhone: %s\n" % (cut_info[0], cut_info[1], cut_info[2]))
         else:
             print("Name not exist\n")
     else:
@@ -46,7 +48,7 @@ def update_operate(update_name):
 def del_operate(del_name):
     if del_name in user_info:
         del user_info[del_name]
-        print("Del %s succeed\n")
+        print("Del %s succeed\n" % del_name)
     else:
         print("Name not exist\n")
 
