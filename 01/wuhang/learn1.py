@@ -47,7 +47,7 @@ def update_operate(update_name):
 def del_operate(del_name):
     if del_name in user_info:
         del user_info[del_name]
-        print("Del %s succeed\n")
+        print("Del %s succeed\n" % del_name)
     else:
         print("Name not exist\n")
 
