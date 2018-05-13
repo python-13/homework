@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Description: dict, input, split, strip, replace, md5
+# Description: dict, input, split, strip, replace, md5， 
 # Author: whang
-# ChangDate: 2018-05-12
+# ChangDate: 2018-05-13
 # Only use python3
 import hashlib
 user_info = {
