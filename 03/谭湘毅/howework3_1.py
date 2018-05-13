@@ -6,7 +6,7 @@
 @contact: curetxy@163.com
 @site: 
 @software: PyCharm
-@file: 金额大小写转换.py
+@file: howework3_1.py
 @time: 2018-05-09-15:32
 """
 
@@ -34,5 +34,5 @@ while True:
 			mid.append(dic_mony[item])
 			mid.append(dic_unit[lennum])
 			lennum = lennum - 1 #列表拼接完成后 继续递减单位
-		print(mid)
+		# print(mid)
 		print('{}元'.format(''.join(mid)))
