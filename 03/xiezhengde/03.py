@@ -24,3 +24,5 @@ if num.isdigit():
         print("{}元".format(ls[0]))
 else:
     print("input Error!Enter（0-9999)")
+    
+# 逻辑上有点问题,测试下1000试试，看下是不是和预期的相符，在改改
