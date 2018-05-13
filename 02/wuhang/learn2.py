@@ -184,3 +184,4 @@ if __name__ == "__main__":
     while True:
         to_operate()
 
+# 完成的很好，逻辑严谨，可以当成一个范本了
