@@ -29,3 +29,4 @@ while i < 0:
 new_str = new_str.strip('零')
 new_str = re.sub('零{2,}','零',new_str)
 print(new_str)
+# 正则的方式实现，看来python功底不错。不过后面少个'元'哈，细节注意下
