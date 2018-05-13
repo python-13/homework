@@ -36,3 +36,5 @@ while True:
 			lennum = lennum - 1 #列表拼接完成后 继续递减单位
 		# print(mid)
 		print('{}元'.format(''.join(mid)))
+		
+# 测试的结果和预期的不太一样哈，1000 不应该是输出壹仟零佰零拾零元，而是壹仟元，再改改哈
