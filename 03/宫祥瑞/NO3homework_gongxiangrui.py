@@ -61,3 +61,5 @@ if __name__=='__main__':
         print('你输入的数字为：',num)
         word=numtochn(num)
         print(word)
+        
+  # 函数实现的，编程的思路很棒，逻辑也很正确，考虑下代码是否可以优化
