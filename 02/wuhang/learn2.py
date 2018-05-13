@@ -3,6 +3,7 @@
 #
 # Description: dict, input, split, strip, replace, md5， 
 # Author: whang
+# QQ: 934946166
 # ChangDate: 2018-05-13
 # Only use python3
 import hashlib
