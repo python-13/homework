@@ -20,3 +20,6 @@ for i,v in enumerate(num):
         elif value[len(value)-1]=="零":
             value=value[:len(value)-1]
 print(value+"元")
+
+
+#实现逻辑很好的，代码写的不错，可以尝试封装成函数，做成通用的，调试的部分去掉。
