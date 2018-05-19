@@ -38,3 +38,5 @@ else:
         print('{}仟零{}元'.format(a[int(price[0])], a[int(price[3])]))
     else:
         print('{}仟{}佰{}拾{}元'.format(a[int(price[0])], a[int(price[1])], a[int(price[2])], a[int(price[3])]))
+        
+# 实现的思路很好，不过代码有点小问题，测试1011和预期的结果不符，再改改哈

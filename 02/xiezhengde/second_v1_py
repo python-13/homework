@@ -117,3 +117,5 @@ while flag: #用户登录部分
             break
         else:
            continue
+
+# 逻辑功能是ok的，可以考虑封装成函数
