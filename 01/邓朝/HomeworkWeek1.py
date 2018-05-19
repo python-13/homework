@@ -11,7 +11,6 @@ while True:
             print('已更新用户数据')
         else:
             date[usrinput[0]] = [usrinput[1], usrinput[2]]
-            print(date)
             print('已添加用户数据')
 
 
