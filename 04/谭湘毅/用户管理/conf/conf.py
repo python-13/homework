@@ -23,7 +23,6 @@ LOG_PATH = os.path.join(BASE_DIR, "logs")
 '''
 json 数据存放的地方
 '''
-
 DATABASE = dict(enginner='file',
 				dbpath=os.path.join(BASE_DIR,'database'),
 				tables={'users':'users'}

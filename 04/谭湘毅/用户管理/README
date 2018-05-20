@@ -9,9 +9,6 @@
 pip install simplejson
 
 首页 index.py
-
-初次运行自动在database目录创建json文件
-
 管理员用户名 admin 密码 1
 普通用户  test  密码 1
 

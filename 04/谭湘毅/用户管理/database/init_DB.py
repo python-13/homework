@@ -36,7 +36,6 @@ class init_DB(object):
 	}
 
 	'''函数 用户数据写入方法，写入json文件'''
-
 	def init_db_users(self):
 		_db_file = os.path.join(my_conf.DATABASE['dbpath'], 'users.db')
 		for k, v in self._user_dic.items():
@@ -47,7 +46,6 @@ class init_DB(object):
 		print("Table create successfull".format(_db_file))
 
 	'''定义一个数据库统一初始化函数'''
-
 	def init_database(self):
 		#获取数据文件列表
 		tables = list(my_conf.DATABASE['tables'].values())
@@ -56,7 +54,7 @@ class init_DB(object):
 
 		for _table in tables:
 			if not os.path.exists(os.path.join(database, '{0}.db'.format(_table))):
-				if hasattr(self, 'init_db_{0}'.format(_table)): #反射
+				if hasattr(self, 'init_db_{0}'.format(_table)): #调用创建表的方法
 					init_func = getattr(init_DB, 'init_db_{0}'.format(_table))
 					init_func(self)
 				else:
