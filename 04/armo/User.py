@@ -100,3 +100,4 @@ if __name__ == '__main__':
         except:
             print("输入错误!")
             continue
+   # 再试下面向对象的方式
