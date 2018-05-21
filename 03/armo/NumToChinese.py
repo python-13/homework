@@ -54,3 +54,5 @@ if __name__ == '__main__':
         else:
             print("输入错误!\n")
             continue
+            
+    # 厉害~
