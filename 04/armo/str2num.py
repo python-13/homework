@@ -18,3 +18,5 @@ for i in numstr[::-1]:
 
 print(num)
 print(type(num))
+
+# 可以，尝试下封装成函数，然后在用面向对象的方式再试试
