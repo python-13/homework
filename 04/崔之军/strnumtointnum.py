@@ -20,3 +20,4 @@ def CustomInt(str1):
     return sum
 
 print(CustomInt(str1))
+# 很厉害的逻辑~
