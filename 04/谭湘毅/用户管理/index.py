@@ -114,16 +114,21 @@ if __name__ == '__main__':
                     if _choose not in ("1", "2", "3", "4"):
                         my_Common.show_message("选择正确的功能编号!", "ERROR")
                         continue
-                    else:
-                        _chooseflag = True
                     if _choose == "4":  # 返回上级菜单
-                        quitflag = True
+                        _chooseflag = True
                     if _choose == "3":  # 注销
                         curruser.logout()
+                        _chooseflag = True
                     if _choose == "1":  # 修改密码
-                        curruser.modify_password()
-                    if _choose == "2":  # 修改 资料
+                        result = curruser.modify_password()
+                        if not result:
+                            my_Common.show_message("密码修改错误!", "ERROR")
+                            _chooseflag = True
+                        else:
+                            _chooseflag = True
+                    if _choose == "2":  # 修改资料
                         curruser.modify_user_info()
+                        _chooseflag = True
             else:
                 curruser.login()  # 登录判断
                 continue

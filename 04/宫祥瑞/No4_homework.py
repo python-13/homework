@@ -145,3 +145,5 @@ if __name__=='__main__':
             break
         else:
             print('error')
+            
+      # 厉害了，都用到，面向对象了

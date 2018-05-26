@@ -1,6 +1,12 @@
-def num(n="123456789"):
-    nums = [x for x in enumerate(n,start=1)]
-    for i in range(len(nums)):
-        print(nums[i][1])
+def fn(n):
+    nums = []
+    count = 0
+    c = []
+    for x in enumerate(n, start=1):
+        nums.append(x)
+        count += 1
+        c.append(count)
+    print(c)
 
-num()
+fn("123456789")
+

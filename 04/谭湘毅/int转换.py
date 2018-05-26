@@ -19,3 +19,5 @@ def auto_int(s):
 	print(num,type(num))
 
 num = auto_int('123456789')
+
+# 逻辑很棒~尝试下用高阶函数来实现一下

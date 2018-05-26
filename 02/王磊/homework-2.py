@@ -59,3 +59,4 @@ while True:
     if action == 'exit':
         print("It will exit this program.")
         break
+# 逻辑上没有啥问题，基础掌握的很好啊，各种格式化输出。
