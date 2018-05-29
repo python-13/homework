@@ -12,34 +12,35 @@
 # 如果用户输入 exit， 则打印退出程序， 并退出
 
 user = {'tom':[30,110], 'jerry':[29,120]}
-
-command = input('Please input a command(delete, update, find, list, exit):')
-if command == 'find':
-    username = input('Please input username:')
-    if username in user.keys():
-        print('age: {}, phone: {}'.format(user[username][0],user[username][1]))
+while True:
+    command = input('Please input a command(delete, update, find, list, exit):')
+    if command == 'find':
+        username = input('Please input username:')
+        if username in user.keys():
+            print('age: {}, phone: {}'.format(user[username][0],user[username][1]))
+        else:
+            print(username + " is not exist!")
+    elif command == 'update':
+        infor = input('Please input your info(username:age:phone):').strip().split(':')
+        username = infor[0]
+        age = infor[1]
+        phone = infor[2]
+        if username in user.keys():
+            user[username] = [age,phone]
+            print('Update Succeed!')
+        else:
+            print(username + " is not exist!")
+    elif command == 'list':
+        [print('username: {}\nage: {}, phone: {}'.format(k,v[0],v[1])) for k,v in user.items()]
+    elif command == 'delete':
+        username = input('Please input username:')
+        if username in user.keys():
+            user.pop(username)
+            print('user ' + username + ' is delete!')
+        else:
+            print(username + " is not exist!")
+    elif command == 'exit':
+        break
     else:
-        print(username + " is not exist!")
-elif command == 'update':
-    infor = input('Please input your info(username:age:phone):') 
-    username = infor.strip(':')[0]
-    age = infor.strip(':')[1]
-    phone = infor.strip(':')[2]
-    if username in user.keys():
-        user[username] = [age,phone]
-    else:
-        print(username + " is not exist!")
-elif command == 'list':
-    [print('username: {}\nage: {}, phone: {}'.format(k,v[0],v[1])) for k,v in user.items()]
-elif command == 'delete':
-    username = input('Please input username:')
-    if username in user.keys():
-        user.pop(username)
-        print('user ' + username + ' is delete!')
-    else:
-        print(username + " is not exist!")
-elif command == 'exit':
-    exit()
-else:
-    print('Error input!!')
+        print('Error input!!')
 
