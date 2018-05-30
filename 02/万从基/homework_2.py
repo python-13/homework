@@ -23,7 +23,7 @@ while True:
     if command == 'find':
         username = input('Please input username:')
         if username in user.keys():
-            print('age: {}, phone: {}'.format(user[username]['age'],user[username]['phone']))
+            print('age: {}, phone: {}, password: {}'.format(user[username]['age'],user[username]['phone'],''.join(['*' for i in range(len(user[username]['passwd']))])))
         else:
             print(username + " is not exist!")
     elif command == 'update':
@@ -37,7 +37,7 @@ while True:
         else:
             print(username + " is not exist!")
     elif command == 'list':
-        [print('username: {}\nage: {}, phone: {}, password: {}'.format(k,v['age'],v['phone'],['*' for i in range(len(v['passwd']))])) for k,v in user.items()]
+        [print('username: {}\nage: {}, phone: {}, password: {}'.format(k,v['age'],v['phone'],''.join(['*' for i in range(len(v['passwd']))]))) for k,v in user.items()]
     elif command == 'delete':
         username = input('Please input username:')
         if username in user.keys():
