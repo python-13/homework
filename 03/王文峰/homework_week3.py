@@ -7,7 +7,7 @@ money = []
 
 while True:
     nums = input(">>>Enter a number less than 6 digits from that number").lstrip("0").strip()
-    if nums.isdigit() and len(nums) < 11:
+    if nums.isdigit() and len(nums) < 13:
         break
     else:
         print("please enter a number less than 11 digits from that number!!!")
