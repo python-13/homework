@@ -1,0 +1,21 @@
+import re
+x_list = ['元','拾','佰','仟']
+y_list = []
+numin = input('plz enter num:')
+transbefor = '0123456789'
+transafter = '零壹贰叁肆伍陆柒捌玖'
+transtab = numin.maketrans(transbefore,transafter)
+numout = numin.translate(transtab)
+if len(numin)<=4:
+    for z in range(len(numout)):
+        y_list.append(numout[z])
+        y_list.append(x_list[len(numout)-z-1])
+    money=''.join(y_list)
+    for i in ("零千", "零佰", "零拾"):
+        money = re.sub(i, "零", money)
+    money = re.sub("零+", "零", money)
+    if '零元' in money:
+        money = re.sub('零元', "元", money)
+    print(money)
+else:
+    print('num too long!')
