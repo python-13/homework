@@ -1,5 +1,5 @@
 import math
-str1 = '123'
+str1 = '6999'
 
 def custompow(x,y):
     """docstring"""
