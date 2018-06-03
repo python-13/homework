@@ -6,7 +6,6 @@ data = {'ab': {'age': 22, 'tel': '895653425', 'passwd': '123456'},
         'wd': {'age': 8, 'tel': '1660809109', 'passwd': '2323232323'},
         'ee' :{'age' :33 ,'tel' :'23232323' ,'passwd' :'1212121212'}}
 
-
 json_str = json.dumps(data)
 
 def user_no_found(username):
