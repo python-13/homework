@@ -114,3 +114,5 @@ def UserManageSystem():
 
 if __name__ == "__main__":
     UserManageSystem()
+
+# 改成持久化存储试试 
