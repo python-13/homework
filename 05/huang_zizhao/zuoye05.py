@@ -27,3 +27,4 @@ def filter_(func,iterable):
         if func(i):
             yield i
 
+# 厉害~考虑到了惰性
