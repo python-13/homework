@@ -10,3 +10,6 @@ def sort_priority(number,group):
 num = sort_priority(number,group)
 print(number)
 print(num)
+
+
+# 也是有另外一变种的写法，尝试下试试
