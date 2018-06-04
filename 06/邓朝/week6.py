@@ -8,3 +8,5 @@ def sort_priority(number,group):
     return _sort(lst)
 
 print(sort_priority(number,group))
+
+# 有额外的变种写法，不用filter试试
