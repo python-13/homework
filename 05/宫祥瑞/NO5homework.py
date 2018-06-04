@@ -42,3 +42,5 @@ rets = myreduce(muti, [1,3,5,7,9])
 
 
 print(ints,inta,res,resa,ret,rets)
+
+# 写的不错，下次分享的时候的，可以聊聊对高阶函数的认识
