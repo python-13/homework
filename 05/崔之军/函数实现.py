@@ -41,7 +41,7 @@ def reduce(func, *args):
             value = 0
         ret += fn(i, value)
     return ret
-
+# 不错，不错，可以尝试的多写几个高阶函数哈
 
 ret = reduce(fn, [1, 2, 3, 4, 6])
 print(ret)
@@ -60,3 +60,5 @@ def cumfilter(func,*args):
     return ret
 
 print(cumfilter(is_odd,lst))
+
+#
