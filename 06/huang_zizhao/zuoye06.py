@@ -14,4 +14,7 @@ def sort_priority(number,group):
 
 
 print(sort_priority(number,group))
-    
+
+
+
+# 你的还有另外一个变种的写法，尝试下试试，提示，元组排序
