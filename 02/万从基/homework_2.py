@@ -51,3 +51,4 @@ while True:
     else:
         print('Error input!!')
 
+# 改写成函数试试
