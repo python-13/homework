@@ -17,4 +17,13 @@ print(sort_priority(number,group))
 
 
 
+def sort_pri(number, group):
+    
+    def _(x):
+        return (0,x) if x in group else (1,x) 
+
+    return sorted(number,key=_)
+
+print(sort_pri(number, group))
+
 # 你的还有另外一个变种的写法，尝试下试试，提示，元组排序
