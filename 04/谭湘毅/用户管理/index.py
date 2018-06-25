@@ -36,7 +36,7 @@ class Main(object):
     def get_users(self):
         """
         显示用户的信息,用户新建、删除、解锁用户时显示用户基本信息
-        :return: my_clsUsers()
+        :return:
         """
         username = my_Common.input_msg("请输入用户名:")
         # 创建一个用户实例
@@ -62,8 +62,9 @@ class Main(object):
 # 函数 init_database 初始化数据库
 if __name__ == '__main__':
 
-    '''类的初始化'''
-    initdb = my_init_DB()#初始类的时候 自动创建 json 字典库
+    # my_init_DB().init_database()
+
+    initdb = my_init_DB()
 
     today = datetime.now().strftime("%Y-%m-%d")
     weekoftoday = date.weekday(datetime.now())
@@ -73,7 +74,8 @@ if __name__ == '__main__':
 
     # --------- 开始 主程序 --------------
     exitFlag = False
-    while not exitFlag:# 根据是否登录显示不同的登录界面
+    while not exitFlag:
+        # 根据是否登录显示不同的登录界面
         if not curruser.islogin:
             print(my_template.index_default_menu.format("欢迎您,请登录",
                                                         today,
@@ -89,11 +91,13 @@ if __name__ == '__main__':
 
         choose = my_Common.input_msg("选择功能编号[1-3]: ", ("1", "2", "3")).strip()
 
-        if choose == "3":#【3】退出系统
+        # 3 退出系统
+        if choose == "3":
             exitFlag = True
             continue
 
-        if choose == "1":# 1 用户登录
+        # 2 用户登录
+        if choose == "1":
             # curruser.
             if (curruser.islogin):
                 # 用户已登录
@@ -110,21 +114,21 @@ if __name__ == '__main__':
                     if _choose not in ("1", "2", "3", "4"):
                         my_Common.show_message("选择正确的功能编号!", "ERROR")
                         continue
-                    else:
-                        _chooseflag = True
                     if _choose == "4":  # 返回上级菜单
                         _chooseflag = True
-                        continue
                     if _choose == "3":  # 注销
                         curruser.logout()
+                        _chooseflag = True
                     if _choose == "1":  # 修改密码
                         result = curruser.modify_password()
                         if not result:
                             my_Common.show_message("密码修改错误!", "ERROR")
                             _chooseflag = True
-                            continue
+                        else:
+                            _chooseflag = True
                     if _choose == "2":  # 修改资料
                         curruser.modify_user_info()
+                        _chooseflag = True
             else:
                 curruser.login()  # 登录判断
                 continue
@@ -147,11 +151,12 @@ if __name__ == '__main__':
                             quit_flag = True
                             continue
                         if _choose == "1": #[1]创建新用户
-                            _newuser = my_clsUsers() #新对象!!!
+                            _newuser = my_clsUsers()
+                            # 调用初始化用户函数创建新用户
                             _newuser.init_user_info()
                         if _choose == "2":#[2]删除用户
                             my_main = Main()
-                            _user = my_main.get_users() #!!!
+                            _user = my_main.get_users()
                             if _user:
                                 confirm = my_Common.input_msg("确定要删除此用户吗(y/n)?", ("y", "n"))
                                 if confirm == "y":
