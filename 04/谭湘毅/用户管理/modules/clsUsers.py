@@ -91,24 +91,21 @@ class clsUsers(object):
             # 调用用户登录方法进行登录,登录成功后更新对象self
             self._user_login(password, check_code)
 
-            # 用户锁定就直接退出
-            if self.islocked:
+            if self.islocked:# 判断用户是否被锁定
                 my_Common.show_message("该用户已被锁定,请联系系统管理员！", "ERROR")
                 self.trycount = 0
                 break
 
-            # 登录成功 退出登录
-            if self.islogin:
+            if self.islogin: # 登录成功 退出登录
                 break
             else:
                 my_Common.show_message("用户名密码错误", "NOTICE")
 
-        # else:
         if self.trycount > my_conf.ERROR_MAX_COUNT:
             # 失败后锁定
             self.islocked = 1
 
-            # 更新用户信息
+            # 更新用户信息锁定用户
             self.dict_user[self.username]["islocked"] = self.islocked
             self.update_user()
             my_Common.show_message("输入错误次数过多,请联系系统管理员!", "ERROR")
@@ -211,7 +208,7 @@ class clsUsers(object):
                 _not_null_flag = True
             self.password = _new_password
             _password = my_Common.encrypt(self.password)
-            self.dict_user[self.username]["password"] = _password
+            self.dict_user[self.username]["password"] = _password #设置字典中对应的 K V
             self.update_user()
             my_Common.show_message("密码修改成功!", "INFORMATIOM")
             return True
@@ -233,7 +230,7 @@ class clsUsers(object):
             username=self.username,
             name=self.name,
             mobile=self.mobile,
-            bindcard=self.bindcard,
+            # bindcard=self.bindcard,
             role=self.role,
             islocked="是" if self.islocked == 1 else "否",
             isdel="是" if self.isdel == 1 else "否"
@@ -262,6 +259,7 @@ class clsUsers(object):
     def init_user_info(self):
         """
         创建用户，完善用户资料信息
+        需要创建一个新的对象
         :return:
         """
         is_null_flag = True
@@ -281,7 +279,7 @@ class clsUsers(object):
         self.password = my_Common.input_msg("密码:")
         self.mobile = my_Common.input_msg("手机:")
         self.role = my_Common.input_msg("用户权限(user/admin):", ("admin", "user"))
-        self.create_user()
+        self.create_user() #调用创建用户的方法
         my_Common.show_message("用户创建成功!", "NOTICE")
 
 
