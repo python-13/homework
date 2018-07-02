@@ -18,3 +18,5 @@ bob = Dict_students('bob',18,80)
 lisa  = Dict_students('lisa',22,75)
 print(bob.to_dict())
 print(lisa.to_dict())
+
+# 可以在延伸下,比如权限控制之类的，试试
