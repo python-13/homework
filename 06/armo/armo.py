@@ -42,3 +42,18 @@ l1 = [2,5,3,7,3,6,1,4,9]
 l2 = [5,3,7]
 l3 = sortafter(sortbefor,l1,l2)
 print(l3)
+# ===================================================================
+number = [8, 3, 1, 2, 5, 4, 7, 6]
+group = {2, 3, 5, 7}
+
+def sort_priority(number, group):
+    def helper(x):
+        if x in group:
+            return (0, x)
+        return (1, x)
+    number.sort(key=helper)
+
+
+sort_priority(number, group)
+
+print(number)
