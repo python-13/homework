@@ -1,0 +1,112 @@
+data = {"zhangsan": [15,134,"1234a"],
+        "blisi": [16,155,"11a"],
+        "wangwu": [11,167,"222222a"],
+        "admin": [22,3333,"8a"]
+}
+
+def login():
+    """登录"""
+    print("Welcome to user management system\nEnter user name and passwd:")
+    user = str(input("User name:")).strip()
+    pwd = str(input("password:")).strip()
+    if user in data and pwd == data[user][2]:
+        print("Login successful!")
+        flag = False  # 控制用户登录循环标签.
+        return user
+    else:
+        print("User or passwd error.\n")
+        login()
+
+def useradd():
+    '''添加用户'''
+
+def userdel():
+    """删除用户"""
+    name = str(input('Delete user name'))
+    if name in data:
+        data.pop(name)
+        print("Delelte Done!")
+    else:
+        print('User name not exist')
+
+def update():
+    """修改"""
+    if user == "admin":
+        flag3 = True
+    if flag3:
+        updata = str(input(" usernmae:age:tel:passwd")).split(":")
+        if updata[0] in data:
+            data.update({updata[0]: [updata[1], updata[2], updata[3]]})
+            print("Update Done!")
+        else:
+            print("'User name not exist")
+    else:
+        print("admin User or passwd error.\n")
+        update()
+
+def find():
+    """查询"""
+    username = str(input("Enter uesr name:")).strip()
+    if username in data:
+        print("age:%s,tel:%s,passwd:%s" % (data[username][0], data[username][1], "*" * len(data[username][2])))
+    else:
+        print("User name not exist")
+
+user = login()
+while True:#操作部分
+    print("Enter'adduser','delete','update','find','list','exit'!")
+    operating = str(input('>>>')).strip()
+    if operating == "delete":#删除用户
+        userdel()
+
+    elif operating == "update": #用户信息更新
+        update()
+
+
+    elif operating == "find": #查询用户信息
+        find()
+
+    elif operating == "list": #列出用户信息
+        data1 = copy.deepcopy(data)
+        for i in data1:
+            data1[i][2] = "*" * (len(data1[i][2]))
+        print ("Enter sort key 'name','age','tel'")
+        sorting = str(input('>>>')).strip()
+        if sorting == 'age':
+            s = sorted(data1.items(),key=lambda x:x[1][0],reverse=True)
+        elif sorting == 'tel':
+            s = sorted(data.items(), key=lambda x: x[1][1], reverse=True)
+        else:
+            s = sorted(data1.items(),key = lambda x:x[0],reverse=True)
+        print(s)
+
+    elif operating == "adduser":#添加用户
+        flag2=False
+        if user != "admin":
+            print("Enter admins name and passwd:")
+            user1 = str(input("Admins name:")).strip()
+            pwd1 = str(input("password:")).strip()
+            if user1 == "admin" and pwd1 == data["admin"][2]:
+                flag2 = True
+            else:
+                print("User name or password error")
+        if user == "admin":
+            flag2 = True
+        if flag2:
+            adduse = str(input("username:")).strip()
+            addpwd = str(input("passwd:")).strip()
+            addage = int(input("age:"))
+            addtel = int(input("tel:"))
+            if adduse in data:
+                print("User name exist")
+            else:
+                data.update({adduse: [addage, addtel, addpwd]})
+                print("User add done")
+        else:
+            print("admin User or passwd error.\n")
+            continue
+    elif operating == "exit":
+        break
+    else:
+       continue
+
