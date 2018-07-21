@@ -1,0 +1,29 @@
+#快速的吧‘123456789’转成int型，不能直接使用int函数，别的不做限制。
+def INT (n):
+    ls = []
+    num = [i for i in range(10)]
+    #print(num)
+    if n.isdigit():
+        for i in strs:
+            ls.append(i)
+    else:
+        return "Error,input digit:"
+        
+    #把字符窜转换成对应数字
+    ls1 = ls[:] 
+    for k,v in enumerate(ls1):
+        #print(k,v)
+        for j in num:
+            if v == str(j):
+                ls[k]=j
+    #数字组合            
+    lenght = len(strs)
+    ret = 0
+    for i in ls:
+        ret += i*10**(lenght-1)
+        lenght -= 1
+    return ret
+
+strs = "123456789"
+INT(strs)
+    
