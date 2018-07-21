@@ -16,6 +16,7 @@ def INT (n):
         for j in num:
             if v == str(j):
                 ls[k]=j
+                continue
     #数字组合            
     lenght = len(strs)
     ret = 0
