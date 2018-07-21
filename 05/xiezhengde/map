@@ -1,9 +1,7 @@
 def fn(x):
     return x*x
 def map(fn,iterator):
-    ls1 = []
-    for i in iterator:
-        ls1.append(fn(i))
+    ls1=[fn(i) for i in iterator]
     return ls1
 
 ls =  [1,2,3,4,5,6,7,8,9]  
